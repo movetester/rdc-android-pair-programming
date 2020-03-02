@@ -1,8 +1,10 @@
 package rdc.move_test;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import rdc.move_test.model.Property;
-import rdc.move_test.util.TestAdapterContract;
 
-public class ListAdapterJava extends RecyclerView.Adapter<ListAdapterJava.ListItemHolder> implements TestAdapterContract {
+public class ListAdapterJava extends RecyclerView.Adapter<ListAdapterJava.ListItemHolder> {
     private Context context;
     private List<Property> listItems = new ArrayList<>();
 
@@ -54,8 +55,7 @@ public class ListAdapterJava extends RecyclerView.Adapter<ListAdapterJava.ListIt
         return listItems.size();
     }
 
-    @Override
-    public void setListItems(@NonNull List<Property> listItems) {
+    void setListItems(@NonNull List<Property> listItems) {
         this.listItems = listItems;
     }
 
